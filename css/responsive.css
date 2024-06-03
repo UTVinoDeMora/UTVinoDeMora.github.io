@@ -1,3 +1,62 @@
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes the switcher to the right */
+    padding: 0 10px;
+}
+
+.language-switcher a {
+    text-decoration: none;
+    color: #333; /* Default color */
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.language-switcher #lang-en:hover {
+    background-color: #007bff; /* Blue background on hover for English */
+    color: #fff; /* White text color on hover for English */
+}
+
+.language-switcher #lang-es:hover {
+    background-color: #ffc107; /* Yellow background on hover for Spanish */
+    color: #333; /* Dark text color on hover for Spanish */
+}
+
+.language-switcher span {
+    margin: 0 5px;
+    color: #999; /* Separator color */
+}
+
+.language-switcher a.active {
+    background-color: #333; /* Active background color */
+    color: #fff; /* Active text color */
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-box {
+        display: flex;
+        flex-direction: inherit; /* Stack items vertically on smaller screens */
+    }
+
+    .language-switcher {
+        margin: 10px 0;
+    }
+
+    .navbar-toggle {
+        display: block; /* Show toggle button on smaller screens */
+    }
+
+    .nav-box.navbar-collapse {
+        display: none; /* Hide navigation by default */
+    }
+
+    .nav-box.navbar-collapse.show {
+        display: flex; /* Show navigation when toggle is active */
+    }
+}
+
 @media only screen and (min-width: 768px) {
 	.nav-box {
 		display:block !important;
