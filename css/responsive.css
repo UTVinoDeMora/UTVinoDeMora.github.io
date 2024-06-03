@@ -30,8 +30,8 @@
 }
 
 .language-switcher a.active {
-    background-color: #333; /* Active background color */
-    color: #fff; /* Active text color */
+    background-color: #333; 
+    color: #fff; 
 }
 /* Responsive styles */
 @media (max-width: 768px) {
