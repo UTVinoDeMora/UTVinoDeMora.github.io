@@ -590,59 +590,128 @@ a#logo {
     background: #AB1A2F
 }
 
-/*==============================================
-07. WORK BLOCK CSS
-================================================*/
+/* ================================
+07. WORK BLOCK CSS - MEJORADO
+================================*/
+
+/* Contenedor principal centrado */
 .gallery-section {
   text-align: center;
+  padding: 20px;
 }
-.portfolio-item img {
-  max-width: 100%;
-  overflow: hidden;
+
+/* Establecer tamaño uniforme para los elementos */
+.portfolio-item {
+  width: 100%;
+  max-width: 350px; /* Máximo tamaño permitido */
+  margin: 0 auto;
   position: relative;
-  z-index: 9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Ajustar imágenes dentro de las tarjetas */
+.portfolio-item .thumb {
+  width: 100%;
+  height: 350px; /* Mantener altura uniforme */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.portfolio-item .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Evita distorsión manteniendo el recorte adecuado */
   border-radius: 10px;
 }
+
+/* Tarjeta de información al pasar el mouse */
 .portfolio-item .thumb-inner {
   position: absolute;
-  z-index: 99;
   bottom: 0;
-  text-align: left;
-  padding: 20px;
-  background-color: rgba(250,250,250,0.25);
   width: 100%;
   height: 60px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  -webkit-transition: all 0.4s ease;
+  padding: 15px;
+  background-color: rgba(250, 250, 250, 0.25);
   transition: all 0.4s ease;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+/* Texto dentro de la tarjeta */
 .portfolio-item .thumb-inner h4 {
-  margin-bottom: 0;
   font-size: 16px;
-  margin-top: 0px;
+  margin-bottom: 5px;
+  color: #fff;
 }
+
 .portfolio-item .thumb-inner p {
   opacity: 0;
   visibility: hidden;
-  position: absolute;
-  margin-bottom: 0px;
+  font-size: 14px;
+  color: #4a4a4a;
+  transition: all 0.4s ease;
 }
+
+/* Efecto al pasar el mouse */
+.portfolio-item:hover .thumb-inner {
+  height: 100%;
+  background-color: rgba(250, 250, 250, 0.9);
+  border-radius: 10px;
+}
+
+.portfolio-item:hover .thumb-inner h4 {
+  margin-top: 30%;
+  color: #1e1e1e;
+}
+
 .portfolio-item:hover .thumb-inner p {
-  position: relative;
   opacity: 1;
   visibility: visible;
-  color: #4a4a4a;
+  position: relative;
 }
-.portfolio-item:hover .thumb-inner {
-  border-radius: 10px;
-  height: 100%;
-  background-color: rgba(250,250,250,0.9)
+
+/* ================================
+RESPONSIVIDAD MEJORADA
+================================*/
+@media (max-width: 992px) {
+  .gallery-list .item {
+    width: 100%;
+  }
 }
-.portfolio-item:hover .thumb-inner h4 {
-   margin-top: 30%;
-  color: #1e1e1e;
-  margin-bottom: 20px;
+
+@media (max-width: 768px) {
+  .portfolio-item {
+    max-width: 280px; /* Reducir tamaño en móviles */
+  }
+
+  .portfolio-item .thumb {
+    height: 280px;
+  }
+
+  .portfolio-item .thumb-inner h4 {
+    font-size: 14px;
+  }
+
+  .portfolio-item .thumb-inner p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-item {
+    max-width: 100%;
+  }
+
+  .portfolio-item .thumb {
+    height: 250px;
+  }
 }
 
 /*==============================================
